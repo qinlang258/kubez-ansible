@@ -1,8 +1,11 @@
 # Prometheus
 
+
+
 ## 部署K8S
 
 - 运行正常的 `kubernetes` ( 1.17+ )环境。安装手册参考 [高可用集群](https://github.com/caoyingjunz/kubez-ansible/blob/master/docs/install/multinode.md) 或 [单节点集群](https://github.com/caoyingjunz/kubez-ansible/blob/master/docs/install/all-in-one.md)
+
 
 ## 开启prometheus组件
 
@@ -23,6 +26,11 @@ pixiu-system    prometheus-node-exporter-kvkc7                   1/1     Running
 pixiu-system    prometheus-pushgateway-6475d4bbcc-lj6f5          1/1     Running     5 (95s ago)    20h
 pixiu-system    prometheus-server-5bc886d8bf-7c9b2               2/2     Running     10 (95s ago)   20h
 ```
+
+## Awesome Prometheus alerts 官方文档
+
+[promethues Alerts](https: //awesome-prometheus-alerts.grep.to/)
+
 
 ## Ingress配置
 ### 第一步：编辑yaml文件
@@ -114,3 +122,4 @@ pixiu-system   prometheus-k8s   nginx   k8s-prom.pixiu.com      10.0.0.115   80 
 ```sh
 kubectl get secret -n pixiu-system  grafana -o yaml |grep password | awk '{ print $2 }'  | base64 -d
 ```
+
